@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>donatefy</title>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="assets/logo.svg" alt="logo" />
+      <h2>Your donation matters</h2>
+      <p>Just 1 donation can save up to 3 lives</p>
+      <p>Every 2 seconds, someone in the U.S. needs blood</p>
+      <p>8 million people donated blood in the U.S. in 2017</p>
+    </header>
+
+    <section class="form">
+      <h2>Join our waitlist</h2>
+      <form action="/" method="POST">
+        <input type="text" name="name" placeholder="Full Name" />
+        <input type="text" name="email" placeholder="Email" />
+        <input type="text" name="blood-type" placeholder="Blood Type" />
+        <button>I want in</button>
+      </form>
+    </section>
+
+    <main>
+      <h2>Latest <span>donors</span></h2>
+
+      <section class="donors">
+        {% for donor in donors %}
+
+        <div class="donor">
+          <div class="blood-type">{{donor.blood-type}}</div>
+          <p>{{donor.name}}</p>
+        </div>
+
+        {%endfor%}
+      </section>
+    </main>
+    <footer>Made with ❤️ by @carlosblanc0</footer>
+    <script src="public/scripts/index.js"></script>
+  </body>
+</html>
